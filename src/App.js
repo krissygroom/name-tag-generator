@@ -7,8 +7,21 @@ class App extends Component {
     names: ["Erin", "Ann", "Nichole", "Sharon", "Maryn"]
   };
 
+  // Lifecycle methods
+  componentDidMount() {
+    const savedNamesString = localStorage.getItem("savedNames");
+    if (savedNamesString) {
+      const savedNames = JSON.parse(savedNamesString);
+      this.setState({ names: savedNames });
+    }
+  }
+
+  componentDidUpdate() {
+    const savedNamesString = JSON.stringify(this.state.names);
+    localStorage.setItem("savedNames", savedNamesString);
+  }
+
   removeName = (clickedIndex) => {
-    // to learn how the .filter method works, check out https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     const filterCallback = (_, index) => index !== clickedIndex;
     const newNames = this.state.names.filter(filterCallback);
     this.setState({ names: newNames });
