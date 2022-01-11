@@ -1,0 +1,83 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Add Name Input */
+
+body {
+  max-width: 50%;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+input[type="text"] {
+  width: 180px;
+}
+
+input[type="submit"]:hover {
+  filter: brightness(75%);
+}
+
+input[type="submit"]:active {
+  filter: brightness(65%);
+  transform: translateY(2px);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name-tag {
+  background-color: red;
+  padding: 10px 0 20px;
+  border-radius: 20px;
+  width: 350px;
+  margin: 20px 10px;
+  display: block;
+  position: relative;
+}
+.title {
+  color: white;
+  margin: 0;
+  font-size: 40px;
+}
+.subtitle {
+  color: white;
+  margin: 0;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 10px 0;
+  font-size: 60px;
+  height: 90px;
+  font-family: "Permanent Marker", Arial, Helvetica, sans-serif;
+}
+.name-tag__delete {
+  position: absolute;
+  padding: 5px 8px;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.name-tag__delete:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
